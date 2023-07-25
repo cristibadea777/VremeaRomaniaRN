@@ -13,13 +13,14 @@ const HartaRomanieiSvg = ( {judetCurent, handleClickJudet} ) => {
         preserveAspectRatio="none" 
     >
     {
-        judeteSvg.map( ({d, id, name}) => (
+        judeteSvg.map( ({d, id, name, resedinta}) => (
             <Path
                 key         = {id}
                 d           = {d}
                 id          = {id}
                 name        = {name}
-                onPress     = {() => handleClickJudet(name)}
+                resedinta   = {resedinta}
+                onPress     = {() => handleClickJudet(name, resedinta)}
                 fill        = {judetCurent === name ? "white" : "gold"}   
                 stroke      = {"black"}
                 strokeWidth = {2}
