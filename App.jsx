@@ -32,7 +32,7 @@ export default function App() {
             setTemperatura(Math.round(raspunsAPI.main.temp - 273.15))
             setUmiditate(raspunsAPI.main.humidity)
             setVant(raspunsAPI.wind.speed)
-            setareDescriere(raspunsAPI.weather[0].description)
+            setareDescriere(raspunsAPI.weather[0].description, raspunsAPI.weather[0].main)
           }
         ).catch( error => {console.log(error)} )
       } catch (error) {
@@ -52,7 +52,16 @@ export default function App() {
     return raspuns.data
   }
 
-  const setareDescriere = (desc) => {
+
+  //de completat 
+  //https://openweathermap.org/weather-conditions
+
+  //de schimbat numele slug-ului in Vremea Romania
+
+
+
+
+  const setareDescriere = (desc, main) => {
     switch(desc){
       case 'clear sky':
         setDescriere("Cer senin")
@@ -91,7 +100,36 @@ export default function App() {
         setImagine('https://i.imgur.com/7M4Y494.png')
         break
       default:
-        console.log("Eroare")
+        switch(main){
+          case "Thunderstorm":
+            setDescriere("Furtună") 
+            setImagine('https://i.imgur.com/BHA3GBb.png')
+            break
+          case "Drizzle": 
+            setDescriere("Burniță")
+            setImagine("https://i.imgur.com/88ND4tV.png")
+            break
+          case "Clouds":
+            setDescriere("Înnorat")
+            setImagine("https://i.imgur.com/wgQi6BV.png")
+            break
+          case "Rain":
+            setDescriere("Ploaie")
+            setImagine('https://i.imgur.com/WygJ7Is.png')
+            break
+          case "Snow": 
+            setDescriere("Ninsoare")
+            setImagine('https://i.imgur.com/cTOfRM4.png')
+            break
+          case ("Mist" || "Smoke" || "Haze" || "Fog"):
+            setDescriere("Încețoșat")
+            setImagine("https://i.imgur.com/7M4Y494.png")     
+            break     
+          default:
+            setDescriere("")
+            setImagine("")
+            break
+        }
     }
   }
 
