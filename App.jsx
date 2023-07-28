@@ -52,15 +52,6 @@ export default function App() {
     return raspuns.data
   }
 
-
-  //de completat 
-  //https://openweathermap.org/weather-conditions
-
-  //de schimbat numele slug-ului in Vremea Romania
-
-
-
-
   const setareDescriere = (desc, main) => {
     switch(desc){
       case 'clear sky':
@@ -76,8 +67,8 @@ export default function App() {
         setImagine('https://i.imgur.com/eL30XFd.png')
         break
       case 'broken clouds':
-        setDescriere("Noros")
-        setImagine('https://i.imgur.com/u29GxRZ.png')
+        setDescriere("Însorit")
+        setImagine('https://i.imgur.com/s0wfNIT')
         break
       case 'shower rain':
         setDescriere("Rafale de ploaie")
