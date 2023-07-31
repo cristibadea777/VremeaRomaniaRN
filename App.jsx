@@ -68,7 +68,7 @@ export default function App() {
         break
       case 'broken clouds':
         setDescriere("Însorit")
-        setImagine('https://i.imgur.com/s0wfNIT')
+        setImagine('https://i.imgur.com/s0wfNIT.png')
         break
       case 'shower rain':
         setDescriere("Rafale de ploaie")
